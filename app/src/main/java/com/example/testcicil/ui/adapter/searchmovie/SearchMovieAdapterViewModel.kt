@@ -9,7 +9,7 @@ class SearchMovieAdapterViewModel: BaseViewModel() {
     val movieTitle = MutableLiveData<String>()
     val movieType = MutableLiveData<String>()
     val movieYear = MutableLiveData<String>()
-    val movieID = MutableLiveData<String>()
+    private val movieID = MutableLiveData<String>()
     val movieImage = MutableLiveData<String>()
 
     fun bind(itemMovie: SearchItem?){

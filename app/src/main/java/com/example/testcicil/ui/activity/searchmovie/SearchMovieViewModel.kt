@@ -14,7 +14,7 @@ import io.reactivex.schedulers.Schedulers
 import java.util.*
 import javax.inject.Inject
 
-class SearchMovieViewModel(): BaseViewModel(){
+class SearchMovieViewModel : BaseViewModel(){
     @Inject
     lateinit var postApi: OmdApi
 
@@ -52,7 +52,7 @@ class SearchMovieViewModel(): BaseViewModel(){
     private lateinit var timerSearch: Timer
     private var handleSearch = Handler()
     private lateinit var runSearch:Runnable
-    private val DELAY_MS = 500L
+    private val delayMS = 500L
 
     fun onTextChanged(
         s: CharSequence,
@@ -74,14 +74,14 @@ class SearchMovieViewModel(): BaseViewModel(){
                 override fun run() {
                     handleSearch.post(runSearch)
                 }
-            }, DELAY_MS)
+            }, delayMS)
         }else{
             timerSearch = Timer()
             timerSearch.schedule(object : TimerTask() { // task to be scheduled
                 override fun run() {
                     handleSearch.post(runSearch)
                 }
-            }, DELAY_MS)
+            }, delayMS)
         }
 
     }

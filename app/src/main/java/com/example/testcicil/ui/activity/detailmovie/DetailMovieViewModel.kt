@@ -11,7 +11,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class DetailMovieViewModel():BaseViewModel() {
+class DetailMovieViewModel :BaseViewModel() {
     @Inject
     lateinit var postApi: OmdApi
 

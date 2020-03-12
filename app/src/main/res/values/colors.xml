@@ -6,8 +6,7 @@
 
     <color name="transparent">#00000000</color>
     <color name="light_transparent">#16000000</color>
-    <color name="halftransparent">#00000080</color>
     <color name="black">#000000</color>
-    <color name="greyish">#a3a3a3</color>
+    <color name="grey">#a3a3a3</color>
     <color name="white">#ffffff</color>
 </resources>

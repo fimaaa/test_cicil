@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/greyish"
+        android:background="@color/grey"
         >
         <LinearLayout
             android:id="@+id/layout_search_movie"
@@ -28,7 +28,8 @@
                 android:onTextChanged="@{viewModel.onTextChanged}"
                 android:hint="@string/search_movies"
                 android:background="@color/transparent"
-                />
+                android:inputType="text"
+                android:importantForAutofill="no" />
         </LinearLayout>
 
 

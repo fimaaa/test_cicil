@@ -1,6 +1,5 @@
 package com.example.testcicil.model.response
 
-import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
 
 data class RatingsItem(

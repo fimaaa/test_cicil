@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_search_movie.view.*
 class SearchMovieActivity: AppCompatActivity(),RecyclerViewCustom.Listener {
     private lateinit var binding: ActivitySearchMovieBinding
     private lateinit var viewModel: SearchMovieViewModel
-    val scroll = RecyclerViewCustom(this)
+    private val scroll = RecyclerViewCustom(this)
 
 
     override fun onCreate(savedInstanceState: Bundle?){

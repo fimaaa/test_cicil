@@ -1,6 +1,5 @@
 package com.example.testcicil.ui.adapter.other
 
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import com.example.testcicil.base.BaseViewModel
 

@@ -9,10 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.testcicil.R
-import com.example.testcicil.base.BaseViewModel
 import com.example.testcicil.databinding.ActivityDetailMovieBinding
 
-class DetailMovieActivity():AppCompatActivity() {
+class DetailMovieActivity :AppCompatActivity() {
     companion object{
         const val INTENT_ID_DETAILMOVIE = "intent_ID_DetailMovie"
 
