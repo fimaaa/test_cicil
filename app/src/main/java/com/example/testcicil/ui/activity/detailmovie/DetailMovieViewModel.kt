@@ -33,7 +33,7 @@ class DetailMovieViewModel():BaseViewModel() {
 
     fun loadDetailMovies(idMovie:String){
         if(::subscription.isInitialized)  onCleared()
-        subscription = postApi.getDetailMovies(Constans.BASE_API_KEY,idMovie)
+        subscription = postApi.getDetailMovies(Constans.BASE_API_KEY,Constans.TYPE_MOVIES,idMovie)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { onRetrievePostListStart() }

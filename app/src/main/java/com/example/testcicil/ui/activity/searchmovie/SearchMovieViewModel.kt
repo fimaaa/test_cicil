@@ -21,7 +21,7 @@ class SearchMovieViewModel(): BaseViewModel(){
     private lateinit var subscription: Disposable
 
 
-    private val searchText:MutableLiveData<String> = MutableLiveData()
+    val searchText:MutableLiveData<String> = MutableLiveData()
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
     val recyclerVisibility:MutableLiveData<Int> = MutableLiveData()
     val errorMessage:MutableLiveData<String> = MutableLiveData()
@@ -91,7 +91,7 @@ class SearchMovieViewModel(): BaseViewModel(){
         isScrolling.value = false
         if(isNew) pagination = 1 else pagination+=1
         val text = searchText.value?:""
-        subscription = postApi.getMovies(Constans.BASE_API_KEY,text,pagination)
+        subscription = postApi.getMovies(Constans.BASE_API_KEY,Constans.TYPE_MOVIES,text,pagination)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 //            .doOnSubscribe { onRetrievePostListStart() }

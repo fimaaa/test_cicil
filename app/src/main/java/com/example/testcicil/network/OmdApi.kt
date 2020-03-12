@@ -11,6 +11,7 @@ interface OmdApi {
     @GET("/")
     fun getMovies(
         @Query("apikey") searchKey:String,
+        @Query("type") type:String,
         @Query("s") titleMovie:String,
         @Query("page") limitPage:Int
     ): Observable<ResponseSearch>
@@ -19,6 +20,7 @@ interface OmdApi {
     @GET("/")
     fun getDetailMovies(
         @Query("apikey") searchKey:String,
+        @Query("type") type:String,
         @Query("i") idMovie:String
     ):Observable<ResponseDetailMovie>
 }

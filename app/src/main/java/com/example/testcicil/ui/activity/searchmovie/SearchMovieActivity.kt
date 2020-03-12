@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.testcicil.R
 import com.example.testcicil.databinding.ActivitySearchMovieBinding
 import com.example.testcicil.ui.activity.recyclerview.RecyclerViewCustom
+import kotlinx.android.synthetic.main.activity_search_movie.view.*
 
 class SearchMovieActivity: AppCompatActivity(),RecyclerViewCustom.Listener {
     private lateinit var binding: ActivitySearchMovieBinding
@@ -38,6 +39,7 @@ class SearchMovieActivity: AppCompatActivity(),RecyclerViewCustom.Listener {
                 binding.rcvSearchMovie.removeOnScrollListener(scroll)
             }
         })
+        binding.root.et_search_movie.setText(viewModel.searchText.value?:"")
 
     }
 

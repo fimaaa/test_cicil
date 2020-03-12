@@ -20,6 +20,7 @@
             android:background="@drawable/shape_white_allcorner"
             >
             <EditText
+                android:id="@+id/et_search_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
