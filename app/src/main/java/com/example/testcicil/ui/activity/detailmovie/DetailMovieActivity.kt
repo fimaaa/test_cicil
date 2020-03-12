@@ -3,6 +3,7 @@ package com.example.testcicil.ui.activity.detailmovie
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -37,6 +38,9 @@ class DetailMovieActivity():AppCompatActivity() {
         binding.viewModel = viewModel
         viewModel.finishActivit.observe(this, Observer {
             if(it) finish()
+        })
+        viewModel.errorMessage.observe(this, Observer {
+            Toast.makeText(this,viewModel.errorMessage.value,Toast.LENGTH_SHORT).show()
         })
         viewModel.loadDetailMovies(intent.getStringExtra(INTENT_ID_DETAILMOVIE)?:"")
     }

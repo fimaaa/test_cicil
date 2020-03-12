@@ -27,10 +27,11 @@ class DetailMovieViewModel():BaseViewModel() {
     val ratingMovie:MutableLiveData<String> = MutableLiveData()
     val plotMovie:MutableLiveData<String> = MutableLiveData()
 
+    val errorMessage:MutableLiveData<String> = MutableLiveData()
+
     val finishActivit:MutableLiveData<Boolean> = MutableLiveData()
 
     fun loadDetailMovies(idMovie:String){
-        println("gget Movie with ID = $idMovie")
         if(::subscription.isInitialized)  onCleared()
         subscription = postApi.getDetailMovies(Constans.BASE_API_KEY,idMovie)
             .subscribeOn(Schedulers.io())
@@ -55,7 +56,6 @@ class DetailMovieViewModel():BaseViewModel() {
     }
 
     private fun onRetrievePostListSuccess(responseServer:ResponseDetailMovie){
-        println("onSuccess = $responseServer")
         if(responseServer.Error == null){
             imageBanner.value = responseServer.Poster
             titleMovie.value = responseServer.Title
@@ -69,7 +69,7 @@ class DetailMovieViewModel():BaseViewModel() {
     }
 
     private fun onRetrievePostListError(err:String){
-        println("onError = $err")
+        errorMessage.value = err
         finishActivit.value = true
     }
 

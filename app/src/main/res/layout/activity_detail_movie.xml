@@ -35,7 +35,7 @@
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="300dp"
                 app:contentScrim="?attr/colorPrimary"
                 app:expandedTitleGravity="top"
                 app:expandedTitleMarginStart="10dp"
@@ -45,7 +45,7 @@
                 >
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
                     app:layout_collapseMode="parallax"
                     app:layout_collapseParallaxMultiplier="0.75"
                     android:scaleType="fitXY"

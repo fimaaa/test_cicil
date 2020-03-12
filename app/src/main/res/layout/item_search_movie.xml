@@ -7,22 +7,36 @@
             name="viewModel"
             type="com.example.testcicil.ui.adapter.searchmovie.SearchMovieAdapterViewModel" />
     </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/white">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        >
 
-        <ImageView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/iv_poster_movie"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintWidth_percent="0.4"
             app:layout_constraintDimensionRatio="1:1"
-            android:padding="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            mutableGlide="@{viewModel.movieImage}"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="10dp"
+            >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    mutableGlide="@{viewModel.movieImage}"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
 
         <LinearLayout
             android:layout_width="0dp"
@@ -37,16 +51,19 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 mutableText="@{viewModel.movieTitle}"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 mutableText="@{viewModel.movieType}"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 mutableText="@{viewModel.movieYear}"
                 />
             <View
@@ -55,12 +72,14 @@
                 android:layout_weight="1"/>
             <Button
                 android:id="@+id/btn_detail_movie"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="@color/black"
                 android:text="@string/detail_movie"
                 />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </com.google.android.material.card.MaterialCardView>
 </layout>

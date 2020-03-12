@@ -15,10 +15,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.searchmovie.SearchMovieActivity"
             android:label="Daftar Film"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
